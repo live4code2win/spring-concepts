@@ -1,4 +1,3 @@
-<?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
 xmlns:neo4j="http://www.springframework.org/schema/data/neo4j"
@@ -15,7 +14,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 
 <!-- Not initializing employee name variable-->
 <context:component-scan base-package="com.spring.concepts" ></context:component-scan>
-<bean name="employee" class="com.spring.concepts.com.Employee" scope = "singleton"/>
+<bean name="employee1" class="com.spring.concepts.com.Employee" scope = "singleton"/>
 
 <!-- 
 <bean name="employeeService" class="com.journaldev.spring.service.EmployeeService">
