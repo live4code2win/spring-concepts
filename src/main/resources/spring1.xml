@@ -14,8 +14,7 @@ xsi:schemaLocation="http://www.springframework.org/schema/beans
 
 <!-- Not initializing employee name variable-->
 <context:component-scan base-package="com.spring.concepts" ></context:component-scan>
-<bean name="employee1" class="com.spring.concepts.com.Employee" scope = "singleton"/>
-
+<bean name="employee1" class="com.spring.concepts.com.Employee" destroy-method="destroyingEmployeeObject" scope = "singleton"/>
 <!-- 
 <bean name="employeeService" class="com.journaldev.spring.service.EmployeeService">
 	<property name="employee" ref="employee"></property>

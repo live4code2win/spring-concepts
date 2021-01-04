@@ -1,20 +1,42 @@
 package com.spring.concepts.com;
 
+import javax.persistence.Column;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
+import javax.persistence.Id;
+import javax.persistence.Table;
 
+@Entity
+@Table(name = "employee")
 public class Employee {
 
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int id;
+	@Column(name = "emp_name")
 	private String name;
+	@Column(name = "emp_code")
 	private String code;
+	@Column(name = "emp_gender")
 	private String gender;
+	@Column(name = "emp_salary")
 	private double salary;
-	
+	@Column(name = "emp_mail_id")
 	private String email;
+	@Column(name = "emp_contact")
 	private long contact;
+	@Column(name = "emp_password")
 	private String password;
 	
 	public Employee() {
 		System.out.println("loading the employee class...");
+		this.id = 1010;
+		this.name = "Rakesh Sharma";
+		this.code = "PROD";
+		this.email = "xyz.saiglobal.com";
+		this.gender = "Male";
+		this.salary = 97298.56d;
 	}
 	
 	public int getId() {
@@ -98,6 +120,10 @@ public class Employee {
 	public String toString() {
 		return "Employee [id=" + id + ", name=" + name + ", code=" + code + ", gender=" + gender + ", salary=" + salary
 				+ ", email=" + email + ", contact=" + contact + ", password=" + password + "]";
+	}
+	
+	public void destroyingEmployeeObject() {
+		System.out.println("Shuting down the application context hence cleaning up the employee object");
 	}
 
 }
